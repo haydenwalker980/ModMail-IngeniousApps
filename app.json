@@ -1,0 +1,73 @@
+{
+  "name": "ModMail",
+  "description": "Additional changes to Kuro's NadekoBot. Please read the README carefully.",
+  "keywords": [
+    "Heroku",
+    "NadekoBot",
+    "Discord",
+    "Discord Bot",
+    "Entertainment",
+    "Kuro"
+  ],
+  "website": "",
+  "repository": "https://github.com/ScarletKuro/NadekoBot",
+  
+  "addons": [
+  ],
+  "env": {
+    "MainGuildID": {
+      "description": "The main guild ID, AKA the guild this bot is being hosted for.",
+	  "required": true
+   },
+    "StaffGuildID": {
+      "description": "Can be same as MainGuildID.",
+	  "required": true
+    },
+    "ModMailCatagoryID": {
+      "description": "The ID of the ModMail ticket category.",
+	  "required": true
+    },
+        "DiscordModmailLogChannel": {
+      "description": "The channel where sessions will be logged.",
+	  "required": true
+    },
+            "BotToken": {
+      "description": "This is the token the bot will use to logon.",
+	  "required": true
+    },
+            "BotPlayingStatus": {
+      "description": "This is what the status will be. For example: Playing with modmail!",
+	  "required": false
+    },
+                "FROM_HEROKU": {
+      "description": "TRUE. THIS **MUST** BE 'true'.",
+	  "required": true
+    },
+                "BotPrefix": {
+      "description": "The Bot's Prefix",
+	  "required": true
+    },
+                    "LogCommands": {
+      "description": "True/False. Since you are hosting on heroku, this would not affect regardless of input, but it must be a boolean.",
+	  "required": true
+    },
+                        "BotBoundToGuilds": {
+      "description": "True/False. Whether the bot should stick to the guilds listed in MainGuildID and StaffGuildID.",
+	  "required": true
+    },
+                        "BotDMOwnerOnRestart": {
+      "description": "True/False. Whether the bot should DM the owner upon restart.",
+	  "required": true
+    },    
+                            "BotAutoReconnect": {
+      "description": "True/False. Wheater the bot should auto-reconnect if it becomes disconnected.",
+	  "required": true
+    },    
+        }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  },
